@@ -18,6 +18,16 @@ final class TicketService
     ) {
     }
 
+    public function updateStatus(Ticket $ticket, Status $status): bool
+    {
+        return $this->ticketRepository->updateStatus($ticket, $status);
+    }
+
+    public function addManagerResponse(Ticket $ticket, string $response): bool
+    {
+        return $this->ticketRepository->addManagerResponse($ticket, $response);
+    }
+    
     public function createTicket(TicketDTO $dto): Ticket
     {
 
